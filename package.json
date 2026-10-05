@@ -1,0 +1,61 @@
+{
+  "name": "octane-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for OpenText ALM Octane / Core Software Delivery Platform. Node-only, runs with npx.",
+  "license": "MIT",
+  "author": "Toby Monk",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wave1art/octane-mcp.git"
+  },
+  "homepage": "https://github.com/Wave1art/octane-mcp#readme",
+  "bugs": "https://github.com/Wave1art/octane-mcp/issues",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "alm-octane",
+    "octane",
+    "opentext",
+    "valueedge",
+    "sdp",
+    "testing",
+    "alm"
+  ],
+  "type": "module",
+  "bin": {
+    "octane-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsx src/index.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "lint": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.0",
+    "undici": "^8.11.2",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsup": "^8.5.1",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "vitest": "^5.0.3"
+  },
+  "allowScripts": {
+    "esbuild@0.27.7": true,
+    "esbuild@0.28.2": true
+  }
+}
